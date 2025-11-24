@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:phonicsapp/widgets/custom_textfield.dart';
-import 'package:phonicsapp/widgets/password_textfield.dart';
+import 'package:phonicsapp/widgets/signup_secction.dart';
+import 'package:phonicsapp/widgets/type_of_user_selection_section.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
+
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  var currentpageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -16,101 +23,33 @@ class SignupPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Image.asset("assets/images/mouse.png", width: 250, height: 250),
-              Text(
-                "Welcome to PhonicMix!",
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.w700,
+              if (currentpageIndex == 0) SignUpSection(),
+              if (currentpageIndex == 1)
+                TypeOfUserSelectionSection(
+                  options: ["Teacher", "Guardian", " Tutor", "Others"],
+                  onSelect: (selectedItems) => print(selectedItems),
                 ),
-                textAlign: TextAlign.center,
-              ),
               Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: Column(
-                  spacing: 16,
-                  children: [
-                    CustomTextField(label: "Email"),
-                    PasswordTextField(),
-                  ],
+                padding: const EdgeInsets.all(12.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size.fromWidth(
+                      MediaQuery.sizeOf(context).width * 0.7,
+                    ),
+                  ),
+                  onPressed: () {
+                    // increment current page index#
+                    setState(() {
+                      currentpageIndex++;
+                    });
+                  },
+                  child: Text("Next"),
                 ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: AgreementWidget(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(24.0),
-                child: ElevatedButton(onPressed: () {}, child: Text("Next")),
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class AgreementWidget extends StatelessWidget {
-  const AgreementWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Checkbox(
-              value: false,
-              onChanged: (value) {},
-              checkColor: Colors.white,
-              activeColor: Colors.white,
-              focusColor: Colors.white,
-            ),
-            Text("SELECT ALL ", style: TextStyle(color: Colors.white)),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 24),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (value) {},
-                    checkColor: Colors.white,
-                    activeColor: Colors.white,
-                    focusColor: Colors.white,
-                  ),
-                  Expanded(
-                    child: Text(
-                      "I agree to the privacy policy and terms",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (value) {},
-                    checkColor: Colors.white,
-                    activeColor: Colors.white,
-                    focusColor: Colors.white,
-                  ),
-                  Expanded(
-                    child: Text(
-                      "I want to receive email update from Jolly Learning",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }
