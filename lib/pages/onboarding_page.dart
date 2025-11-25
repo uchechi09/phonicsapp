@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:phonicsapp/pages/signin_page.dart';
 import 'package:phonicsapp/pages/signup_page.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -77,7 +78,9 @@ class OnboardingPage extends StatelessWidget {
 
               ElevatedButton(
                 style: ElevatedButton.styleFrom(foregroundColor: Colors.blue),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SigninPage()));
+                },
                 child: Text("Sign in"),
               ),
             ],
