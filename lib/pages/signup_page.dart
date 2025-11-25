@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phonicsapp/pages/home_page.dart';
 import 'package:phonicsapp/widgets/signup_secction.dart';
 import 'package:phonicsapp/widgets/type_of_user_selection_section.dart';
 
@@ -26,7 +27,14 @@ class _SignupPageState extends State<SignupPage> {
               if (currentpageIndex == 0) SignUpSection(),
               if (currentpageIndex == 1)
                 TypeOfUserSelectionSection(
+                  key: Key ("grid1"),
                   options: ["Teacher", "Guardian", " Tutor", "Others"],
+                  onSelect: (selectedItems) => print(selectedItems),
+                ),
+              if (currentpageIndex == 2)
+                TypeOfUserSelectionSection(
+                  key: Key("grid2"),
+                  options: ["0-3", "4-6", "7-8", "8 +"],
                   onSelect: (selectedItems) => print(selectedItems),
                 ),
               Padding(
@@ -34,14 +42,21 @@ class _SignupPageState extends State<SignupPage> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size.fromWidth(
-                      MediaQuery.sizeOf(context).width * 0.7,
+                      MediaQuery.sizeOf(context).width * 0.12,
                     ),
                   ),
                   onPressed: () {
-                    // increment current page index#
-                    setState(() {
-                      currentpageIndex++;
-                    });
+                    if (currentpageIndex == 2) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    } else {
+                      // increment current page index#
+                      setState(() {
+                        currentpageIndex++;
+                      });
+                    }
                   },
                   child: Text("Next"),
                 ),
