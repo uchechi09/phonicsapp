@@ -11,9 +11,10 @@ class SignUpSection extends StatelessWidget {
       children: [
         Text(
           "Welcome to PhonicMix!",
-          style: Theme.of(
-            context,
-          ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w700),
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
           textAlign: TextAlign.center,
         ),
         Padding(
@@ -48,9 +49,7 @@ class AgreementWidget extends StatelessWidget {
             Checkbox(
               value: false,
               onChanged: (value) {},
-              checkColor: Colors.white,
-              activeColor: Colors.white,
-              focusColor: Colors.white,
+              side: BorderSide(color: Colors.white),
             ),
             Text("SELECT ALL ", style: TextStyle(color: Colors.white)),
           ],
@@ -64,9 +63,7 @@ class AgreementWidget extends StatelessWidget {
                   Checkbox(
                     value: false,
                     onChanged: (value) {},
-                    checkColor: Colors.white,
-                    activeColor: Colors.white,
-                    focusColor: Colors.white,
+                    side: BorderSide(color: Colors.white),
                   ),
                   Expanded(
                     child: Text(
@@ -81,9 +78,7 @@ class AgreementWidget extends StatelessWidget {
                   Checkbox(
                     value: false,
                     onChanged: (value) {},
-                    checkColor: Colors.white,
-                    activeColor: Colors.white,
-                    focusColor: Colors.white,
+                    side: BorderSide(color: Colors.white),
                   ),
                   Expanded(
                     child: Text(

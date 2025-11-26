@@ -27,12 +27,14 @@ class _SignupPageState extends State<SignupPage> {
               if (currentpageIndex == 0) SignUpSection(),
               if (currentpageIndex == 1)
                 TypeOfUserSelectionSection(
+                  heading: "Are you a guardian or a teacher?", 
                   key: Key ("grid1"),
                   options: ["Teacher", "Guardian", " Tutor", "Others"],
                   onSelect: (selectedItems) => print(selectedItems),
                 ),
               if (currentpageIndex == 2)
                 TypeOfUserSelectionSection(
+                  heading: "Select your age",
                   key: Key("grid2"),
                   options: ["0-3", "4-6", "7-8", "8 +"],
                   onSelect: (selectedItems) => print(selectedItems),

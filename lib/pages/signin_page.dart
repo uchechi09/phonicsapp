@@ -20,7 +20,7 @@ class SigninPage extends StatelessWidget {
               Text(
                 "Welcome back! Let's return\nto your learning journey!",
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w700, color: Colors.white
                 ),
                 textAlign: TextAlign.center,
               ),

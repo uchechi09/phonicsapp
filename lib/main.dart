@@ -19,12 +19,6 @@ class MyApp extends StatelessWidget {
         ),
         primaryColor: Colors.amberAccent.shade100,
         scaffoldBackgroundColor: Colors.grey.shade200,
-        textTheme: TextTheme(
-          headlineMedium: TextStyle(color: Colors.white),
-          headlineSmall: TextStyle(color: Colors.white),
-          bodyLarge: TextStyle(color: Colors.white),
-          bodySmall: TextStyle(color: Colors.white),
-        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(

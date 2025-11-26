@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phonicsapp/pages/lesson_page.dart';
+import 'package:phonicsapp/pages/lessons_page.dart';
 import 'package:phonicsapp/pages/profile_page.dart';
 import 'package:phonicsapp/widgets/custom_tab_controller.dart';
 
