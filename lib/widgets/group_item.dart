@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:phonicsapp/models/phonics_character.dart';
+import 'package:phonicsapp/models/phonics_group.dart';
 
 class GroupItem extends StatefulWidget {
-  const GroupItem({super.key});
+  const GroupItem({super.key, required this.phonicsGroup, });
+   final PhonicsGroup phonicsGroup;
 
   @override
   State<GroupItem> createState() => _GroupItemState();
@@ -11,8 +14,7 @@ class GroupItem extends StatefulWidget {
 class _GroupItemState extends State<GroupItem> {
   @override
   Widget build(BuildContext context) {
-    var dummyListOfCharacters = ["s", "u", "j", "ee", "er", "f"];
-    var color = Colors.deepPurple;
+   
     return Container(
       height: 400,
       child: Stack(
@@ -30,17 +32,17 @@ class _GroupItemState extends State<GroupItem> {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: color,
+                backgroundColor: widget.phonicsGroup.color,
                 foregroundColor: Colors.white,
               ),
-              child: Text("Practice Group 1 with Readers"),
+              child: Text("Practice Group ${widget.phonicsGroup.id} with Readers"),
             ),
           ),
           Positioned(
             top: 110,
             right: 32,
             left: 32,
-            child: _buildGrid(context, dummyListOfCharacters),
+            child: _buildGrid(context,widget.phonicsGroup.characters),
           ),
         ],
       ),
@@ -49,14 +51,14 @@ class _GroupItemState extends State<GroupItem> {
 
   SizedBox _buildGrid(
     BuildContext context,
-    List<String> dummyListOfCharacters,
+    List<PhonicsCharacter> listOfCharacters,
   ) {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width * 0.85,
       height: 350,
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
-        itemCount: dummyListOfCharacters.length,
+        itemCount: listOfCharacters.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           mainAxisSpacing: 14,
@@ -70,9 +72,9 @@ class _GroupItemState extends State<GroupItem> {
             ),
             child: Center(
               child: Text(
-                dummyListOfCharacters[index],
+               listOfCharacters[index].character,
                 style: GoogleFonts.fredoka(
-                  color: Colors.deepPurple,
+                  color: widget.phonicsGroup.color,
                   fontWeight: FontWeight.bold,fontSize: 32
                 ),
                 
@@ -97,7 +99,7 @@ class _GroupItemState extends State<GroupItem> {
         padding: const EdgeInsets.only(bottom: 8.0),
         child: Center(
           child: Text(
-            "Group 1",
+            "Group ${widget.phonicsGroup.id}",
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
