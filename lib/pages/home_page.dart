@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phonicsapp/pages/lessons_page.dart';
-import 'package:phonicsapp/pages/profile_page.dart';
+import 'package:phonicsapp/pages/pupils_page.dart';
 import 'package:phonicsapp/widgets/custom_tab_controller.dart';
 
 
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       body: TabBarView(
         controller: tabController,
-        children: [LessonsPage(), ProfilePage()],
+        children: [LessonsPage(), PupilsPage()],
       ),
       bottomNavigationBar: CustomBottomNavigation(tabController: tabController,),
     );

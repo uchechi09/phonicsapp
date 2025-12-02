@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:phonicsapp/models/phonics_character.dart';
 import 'package:phonicsapp/models/phonics_group.dart';
+import 'package:phonicsapp/pages/lesson_description_page.dart';
 
 class GroupItem extends StatefulWidget {
   const GroupItem({super.key, required this.phonicsGroup, });
@@ -65,19 +66,26 @@ class _GroupItemState extends State<GroupItem> {
           crossAxisSpacing: 14,
         ),
         itemBuilder: (context, index) {
-          return Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Center(
-              child: Text(
-               listOfCharacters[index].character,
-                style: GoogleFonts.fredoka(
-                  color: widget.phonicsGroup.color,
-                  fontWeight: FontWeight.bold,fontSize: 32
+          return InkWell( 
+            onTap: () {
+             Navigator.push(context, MaterialPageRoute(
+                builder: (context) => LessonDescriptionPage(),
+              ));
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Center(
+                child: Text(
+                 listOfCharacters[index].character,
+                  style: GoogleFonts.fredoka(
+                    color: widget.phonicsGroup.color,
+                    fontWeight: FontWeight.bold,fontSize: 32
+                  ),
+                  
                 ),
-                
               ),
             ),
           );
