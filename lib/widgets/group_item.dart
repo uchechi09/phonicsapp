@@ -66,10 +66,16 @@ class _GroupItemState extends State<GroupItem> {
           crossAxisSpacing: 14,
         ),
         itemBuilder: (context, index) {
+          var  phonicCharacter = listOfCharacters[index];
           return InkWell( 
             onTap: () {
              Navigator.push(context, MaterialPageRoute(
-                builder: (context) => LessonDescriptionPage(),
+                builder: (context) {
+                  return LessonDescriptionPage(
+                  color: widget.phonicsGroup.color,
+                  phonicsCharacter: phonicCharacter,
+                );
+                },
               ));
             },
             child: Container(
@@ -79,7 +85,7 @@ class _GroupItemState extends State<GroupItem> {
               ),
               child: Center(
                 child: Text(
-                 listOfCharacters[index].character,
+                 phonicCharacter.character,
                   style: GoogleFonts.fredoka(
                     color: widget.phonicsGroup.color,
                     fontWeight: FontWeight.bold,fontSize: 32

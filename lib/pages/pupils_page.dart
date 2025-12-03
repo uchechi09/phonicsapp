@@ -33,7 +33,7 @@ class PupilsPage extends StatelessWidget {
                           Card(
                             child: IconButton(
                               onPressed: () {},
-                              icon: Icon(Icons.help, color: Colors.pink),
+                              icon: Icon(Icons.info_outline, color: Colors.pink),
                             ),
                           ),
                           SizedBox(width: 6),
