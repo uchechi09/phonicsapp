@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:phonicsapp/models/phonics_character.dart';
 import 'package:phonicsapp/pages/flash_card_page.dart';
+import 'package:phonicsapp/pages/formation_page.dart';
 
 class LessonDescriptionPage extends StatefulWidget {
   const LessonDescriptionPage({
@@ -61,7 +62,7 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
                   ),
                 );
               },
-              icon: Icon(Icons.expand, color: Colors.red.shade400),
+              icon: Icon(Icons.expand, color: Colors.grey.shade400),
             ),
             child: Center(
               child: GestureDetector(
@@ -86,15 +87,87 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
               ),
             ),
           ),
+          //
+          // finger tracing
+          _buildCardView(
+            title: "Formation",
+            bottomItem: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => FormationPage(color: widget.color),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                foregroundColor: Colors.white,
+                fixedSize: Size.fromWidth(MediaQuery.sizeOf(context).width),
+              ),
+              child: Text("Finger Tracing"),
+            ),
+            child: Center(
+              child: GestureDetector(
+                onTap: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  width: 150,
+                  height: 150,
+                  child: Center(
+                    child: Text(
+                      phonicChar,
+                      style: TextStyle(
+                        fontSize: 105,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.redAccent,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          //
+          // writing card
+          _buildCardView(
+            title: "Writing",
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Call the sound below and ask the children to write them down",
+                ),
+                Wrap(
+                 // alignment: WrapAlignment.start,
+                  children: List.generate(
+                    phonicsCharacter.listOfWriting.length,
+                    (index) {
+                      return Padding(padding: EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        radius: 30,
+                        child: Text(phonicsCharacter.listOfWriting[index].character),
+                      ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 
-  Container _buildCardView({
+  Widget _buildCardView({
     required String title,
     required Widget child,
-   Widget? actions,
+    Widget? actions,
+    Widget? bottomItem,
   }) {
     return Container(
       decoration: BoxDecoration(
@@ -117,10 +190,11 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
                 ),
                 if (actions != null) actions,
               ],
-            
             ),
           ),
           Container(child: child),
+
+          if (bottomItem != null) bottomItem,
         ],
       ),
     );

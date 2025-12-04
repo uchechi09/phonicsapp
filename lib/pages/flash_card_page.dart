@@ -13,12 +13,12 @@ class FlashCardPage extends StatelessWidget {
             color: Colors.grey.shade300,
             borderRadius: BorderRadius.circular(24),
           ),
-          width: 150,
-          height: 150,
+          width: 900,
+          height: 900,
           child: Center(
             child: Text(
               phonicChar,
-              style: TextStyle(fontSize: 105, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 300, fontWeight: FontWeight.w900),
             ),
           ),
         ),
