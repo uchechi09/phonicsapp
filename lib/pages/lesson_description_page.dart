@@ -132,6 +132,29 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
             ),
           ),
           //
+          // sounding section
+          _buildCardView(
+            title: "Sounding ",
+            child: Column(
+              children: [
+                Text(
+                  "Which of these words does not start with /$phonicChar/ sound?",
+                ),
+                Column(
+                  children: [
+                   ... List.generate(
+                      phonicsCharacter.soundingItems.length,
+                      (index) {
+                        var soundingItem = phonicsCharacter.soundingItems[index];
+                        return Container( height: 220, width: 200, child: Image.asset(soundingItem.image, ),);
+                      }
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          //
           // writing card
           _buildCardView(
             title: "Writing",
@@ -142,15 +165,18 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
                   "Call the sound below and ask the children to write them down",
                 ),
                 Wrap(
-                 // alignment: WrapAlignment.start,
+                  // alignment: WrapAlignment.start,
                   children: List.generate(
                     phonicsCharacter.listOfWriting.length,
                     (index) {
-                      return Padding(padding: EdgeInsets.all(8.0),
-                      child: CircleAvatar(
-                        radius: 30,
-                        child: Text(phonicsCharacter.listOfWriting[index].character),
-                      ),
+                      return Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: CircleAvatar(
+                          radius: 30,
+                          child: Text(
+                            phonicsCharacter.listOfWriting[index].character,
+                          ),
+                        ),
                       );
                     },
                   ),
@@ -158,6 +184,13 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
               ],
             ),
           ),
+          //
+          // song section 
+          _buildCardView(title: "Song", child: Column(
+            children: [
+              Text(phonicsCharacter.songText),
+            ],
+          ))
         ],
       ),
     );

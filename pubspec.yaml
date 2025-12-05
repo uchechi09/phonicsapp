@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^6.3.2
   flutter_animate: ^4.5.2
   scribble: ^0.10.0+1
+  just_audio: ^0.10.5
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,7 @@ flutter:
   assets:
     - assets/images/
     - assets/actions/
+    - assets/audios/
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

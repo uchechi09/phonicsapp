@@ -6,6 +6,10 @@ import 'package:phonicsapp/models/sounding_item.dart';
 import 'package:phonicsapp/models/writing_item.dart';
 
 final _dummySoundingItems = [
+  SoundingItem(image: "assets/images/sun.jpg", audio: "assets/audio/sun.mp3", name: "sun"),
+  SoundingItem(image: "assets/images/spider.jpg", audio: "assets/audio/spider.mp3", name: "spider"),
+  SoundingItem(image: "assets/images/drum.png", audio: "assets/audio/drum.mp3", name: "drum"),
+  SoundingItem(image: "assets/images/snail.png", audio: "assets/audio/snail.mp3", name: "snail"),
   SoundingItem(
     image: "assets/images/sounds/apple.png",
     audio: "assets/audio/sounds/apple.mp3",
@@ -134,6 +138,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
       _dummySoundingItems[0],
       _dummySoundingItems[1],
       _dummySoundingItems[2],
+       _dummySoundingItems[3],
     ],
     correctSoundingItemIndex: 2,
     listOfWriting: [_dummyWritingItems[0], _dummyWritingItems[1]],
