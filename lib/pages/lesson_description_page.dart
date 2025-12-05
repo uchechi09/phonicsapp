@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:phonicsapp/models/phonics_character.dart';
 import 'package:phonicsapp/pages/flash_card_page.dart';
 import 'package:phonicsapp/pages/formation_page.dart';
+import 'package:phonicsapp/widgets/phonics_card_view.dart';
+import 'package:phonicsapp/widgets/sounding_section_card.dart';
 
 class LessonDescriptionPage extends StatefulWidget {
   const LessonDescriptionPage({
@@ -34,10 +36,13 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
         children: [
           //
           // story section
-          _buildCardView(title: "Story", child: Text(phonicsCharacter.story)),
+          PhonicsCardViewPage(
+            title: "Story",
+            child: Text(phonicsCharacter.story),
+          ),
           //
           // action section
-          _buildCardView(
+          PhonicsCardViewPage(
             title: "Actions",
             child: Column(
               children: [
@@ -51,7 +56,7 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
           ),
           //
           // flash card
-          _buildCardView(
+          PhonicsCardViewPage(
             title: "Flash Card",
             actions: IconButton(
               onPressed: () {
@@ -89,7 +94,7 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
           ),
           //
           // finger tracing
-          _buildCardView(
+          PhonicsCardViewPage(
             title: "Formation",
             bottomItem: ElevatedButton(
               onPressed: () {
@@ -133,30 +138,10 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
           ),
           //
           // sounding section
-          _buildCardView(
-            title: "Sounding ",
-            child: Column(
-              children: [
-                Text(
-                  "Which of these words does not start with /$phonicChar/ sound?",
-                ),
-                Column(
-                  children: [
-                   ... List.generate(
-                      phonicsCharacter.soundingItems.length,
-                      (index) {
-                        var soundingItem = phonicsCharacter.soundingItems[index];
-                        return Container( height: 220, width: 200, child: Image.asset(soundingItem.image, ),);
-                      }
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          SoundingSectionCard(phonicChar: phonicChar, phonicsCharacter: phonicsCharacter),
           //
           // writing card
-          _buildCardView(
+          PhonicsCardViewPage(
             title: "Writing",
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,51 +170,14 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
             ),
           ),
           //
-          // song section 
-          _buildCardView(title: "Song", child: Column(
-            children: [
-              Text(phonicsCharacter.songText),
-            ],
-          ))
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCardView({
-    required String title,
-    required Widget child,
-    Widget? actions,
-    Widget? bottomItem,
-  }) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(vertical: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                ),
-                if (actions != null) actions,
-              ],
-            ),
+          // song section
+          PhonicsCardViewPage(
+            title: "Song",
+            child: Column(children: [Text(phonicsCharacter.songText)]),
           ),
-          Container(child: child),
-
-          if (bottomItem != null) bottomItem,
         ],
       ),
     );
   }
 }
+
