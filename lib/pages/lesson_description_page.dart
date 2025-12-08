@@ -6,6 +6,12 @@ import 'package:phonicsapp/pages/formation_page.dart';
 import 'package:phonicsapp/widgets/phonics_card_view.dart';
 import 'package:phonicsapp/widgets/sounding_section_card.dart';
 
+// LessonDescriptionPage
+// Shows details for a single phonics character: story, actions,
+// flash card, formation (finger tracing), sounding examples and song.
+// The page composes smaller widgets (`PhonicsCardViewPage`,
+// `SoundingSectionCard`) to keep layout consistent.
+
 class LessonDescriptionPage extends StatefulWidget {
   const LessonDescriptionPage({
     super.key,
@@ -35,14 +41,14 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
-          //
-          // story section
+          // Story section: brief story that reinforces the sound.
           PhonicsCardViewPage(
             title: "Story",
             child: Text(phonicsCharacter.story),
           ),
           //
-          // action section
+          // Action section: shows an image and a short instruction
+          // children can perform to link movement to the sound.
           PhonicsCardViewPage(
             title: "Actions",
             child: Column(
@@ -56,7 +62,8 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
             ),
           ),
           //
-          // flash card
+          // Flash card: tappable card that expands to a full-screen
+          // `FlashCardPage` for focus practice.
           PhonicsCardViewPage(
             title: "Flash Card",
             actions: IconButton(
@@ -94,7 +101,8 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
             ),
           ),
           //
-          // finger tracing
+          // Formation / Finger tracing: navigates to `FormationPage`
+          // where the learner can trace the character on screen.
           PhonicsCardViewPage(
             title: "Formation",
             bottomItem: ElevatedButton(
@@ -138,13 +146,15 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
             ),
           ),
           //
-          // sounding section
+          // Sounding section: shows listening examples and playable
+          // audio for the character (handled by `SoundingSectionCard`).
           SoundingSectionCard(
             phonicChar: phonicChar,
             phonicsCharacter: phonicsCharacter,
           ),
           //
-          // writing card
+          // Writing card: shows writing practice examples (words or
+          // characters) that children can copy.
           PhonicsCardViewPage(
             title: "Writing",
             child: Column(
@@ -174,7 +184,8 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
             ),
           ),
           //
-          // song section
+          // Song section: displays song text and a small audio player
+          // implemented below as `SongWidget`.
           PhonicsCardViewPage(
             title: "Song",
             child: Column(
@@ -199,10 +210,12 @@ class SongWidget extends StatefulWidget {
 }
 
 class _SongWidgetState extends State<SongWidget> {
+  // Audio player used to play the song asset
   var justAudio = AudioPlayer();
-  bool playing = false;
-  double currentSeconds = 0;
-  double maxSeconds = 0;
+  // Playback state
+  bool playing = false; // whether audio is currently playing
+  double currentSeconds = 0; // current playback position in seconds
+  double maxSeconds = 0; // total duration in seconds
 
   @override
   void initState() {
@@ -221,6 +234,7 @@ class _SongWidgetState extends State<SongWidget> {
         justAudio.stop();
       }
 
+      // update UI as the playback position changes
       setState(() {});
     });
   }
@@ -251,17 +265,23 @@ class _SongWidgetState extends State<SongWidget> {
           ),
           IconButton(
             onPressed: () {
+              // Toggle playback. Note: `setAsset` is called here which
+              // re-initializes the audio source; consider removing it
+              // if the asset is already set to avoid reloading.
               justAudio.setAsset(widget.songAssest);
               justAudio.play();
               if (playing) {
+                // pause if currently playing
                 playing = false;
                 justAudio.pause();
               } else {
+                // start playing
                 playing = true;
               }
               setState(() {});
             },
             icon: Icon(
+              // switch icon based on `playing` state
               playing ? Icons.play_circle_outline : Icons.pause_circle,
               size: 60,
             ),
