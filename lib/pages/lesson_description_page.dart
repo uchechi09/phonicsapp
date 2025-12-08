@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:phonicsapp/models/phonics_character.dart';
 import 'package:phonicsapp/pages/flash_card_page.dart';
 import 'package:phonicsapp/pages/formation_page.dart';
@@ -138,7 +139,10 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
           ),
           //
           // sounding section
-          SoundingSectionCard(phonicChar: phonicChar, phonicsCharacter: phonicsCharacter),
+          SoundingSectionCard(
+            phonicChar: phonicChar,
+            phonicsCharacter: phonicsCharacter,
+          ),
           //
           // writing card
           PhonicsCardViewPage(
@@ -173,7 +177,12 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
           // song section
           PhonicsCardViewPage(
             title: "Song",
-            child: Column(children: [Text(phonicsCharacter.songText)]),
+            child: Column(
+              children: [
+                Text(phonicsCharacter.songText),
+                SongWidget(songAssest: widget.phonicsCharacter.songAudio),
+              ],
+            ),
           ),
         ],
       ),
@@ -181,3 +190,84 @@ class _LessonDescriptionPageState extends State<LessonDescriptionPage> {
   }
 }
 
+class SongWidget extends StatefulWidget {
+  const SongWidget({super.key, required this.songAssest});
+  final String songAssest;
+
+  @override
+  State<SongWidget> createState() => _SongWidgetState();
+}
+
+class _SongWidgetState extends State<SongWidget> {
+  var justAudio = AudioPlayer();
+  bool playing = false;
+  double currentSeconds = 0;
+  double maxSeconds = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    initializeAudio();
+  }
+
+  Future<void> initializeAudio() async {
+    justAudio = AudioPlayer();
+    await justAudio.setAsset(widget.songAssest);
+    maxSeconds = (justAudio.duration?.inSeconds ?? 0).toDouble();
+    justAudio.positionStream.listen((duration) {
+      currentSeconds = duration.inSeconds.toDouble();
+      if (currentSeconds >= maxSeconds) {
+        playing = false;
+        justAudio.stop();
+      }
+
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    justAudio.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Slider(
+                value: currentSeconds,
+                max: maxSeconds,
+                onChanged: (position) {
+                  justAudio.seek(Duration(seconds: position.toInt()));
+                },
+              ),
+              Text(currentSeconds.toString()),
+            ],
+          ),
+          IconButton(
+            onPressed: () {
+              justAudio.setAsset(widget.songAssest);
+              justAudio.play();
+              if (playing) {
+                playing = false;
+                justAudio.pause();
+              } else {
+                playing = true;
+              }
+              setState(() {});
+            },
+            icon: Icon(
+              playing ? Icons.play_circle_outline : Icons.pause_circle,
+              size: 60,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

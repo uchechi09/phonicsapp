@@ -6,53 +6,53 @@ import 'package:phonicsapp/models/sounding_item.dart';
 import 'package:phonicsapp/models/writing_item.dart';
 
 final _dummySoundingItems = [
-  SoundingItem(image: "assets/images/sun.jpg", audio: "assets/audio/sun.mp3", name: "sun"),
-  SoundingItem(image: "assets/images/spider.jpg", audio: "assets/audio/spider.mp3", name: "spider"),
-  SoundingItem(image: "assets/images/drum.png", audio: "assets/audio/drum.mp3", name: "drum"),
-  SoundingItem(image: "assets/images/snail.png", audio: "assets/audio/snail.mp3", name: "snail"),
+  SoundingItem(image: "assets/images/sun.jpg", audio: "assets/audios/sun.mp3", name: "sun"),
+  SoundingItem(image: "assets/images/spider.jpg", audio: "assets/audios/spider.mp3", name: "spider"),
+  SoundingItem(image: "assets/images/drum.png", audio: "assets/audios/drum.mp3", name: "drum"),
+  SoundingItem(image: "assets/images/snail.png", audio: "assets/audios/snail.mp3", name: "snail"),
   SoundingItem(
     image: "assets/images/sounds/apple.png",
-    audio: "assets/audio/sounds/apple.mp3",
+    audio: "assets/audios/sounds/apple.mp3",
     name: "Apple",
   ),
   SoundingItem(
     image: "assets/images/sounds/ball.png",
-    audio: "assets/audio/sounds/ball.mp3",
+    audio: "assets/audios/sounds/ball.mp3",
     name: "Ball",
   ),
   SoundingItem(
     image: "assets/images/sounds/cat.png",
-    audio: "assets/audio/sounds/cat.mp3",
+    audio: "assets/audios/sounds/cat.mp3",
     name: "Cat",
   ),
   SoundingItem(
     image: "assets/images/sounds/dog.png",
-    audio: "assets/audio/sounds/dog.mp3",
+    audio: "assets/audios/sounds/dog.mp3",
     name: "Dog",
   ),
   SoundingItem(
     image: "assets/images/sounds/egg.png",
-    audio: "assets/audio/sounds/egg.mp3",
+    audio: "assets/audios/sounds/egg.mp3",
     name: "Egg",
   ),
   SoundingItem(
     image: "assets/images/sounds/nest.png",
-    audio: "assets/audio/sounds/nest.mp3",
+    audio: "assets/audios/sounds/nest.mp3",
     name: "Nest",
   ),
   SoundingItem(
     image: "assets/images/sounds/rabbit.png",
-    audio: "assets/audio/sounds/rabbit.mp3",
+    audio: "assets/audios/sounds/rabbit.mp3",
     name: "Rabbit",
   ),
   SoundingItem(
     image: "assets/images/sounds/monkey.png",
-    audio: "assets/audio/sounds/monkey.mp3",
+    audio: "assets/audios/sounds/monkey.mp3",
     name: "Monkey",
   ),
   SoundingItem(
     image: "assets/images/sounds/duck.png",
-    audio: "assets/audio/sounds/duck.mp3",
+    audio: "assets/audios/sounds/duck.mp3",
     name: "Duck",
   ),
 ];
@@ -61,67 +61,67 @@ final _dummySoundingItems = [
 final _dummyWritingItems = [
   WritingItem(
     character: "A",
-    sound: "assets/audio/writing/a.mp3",
+    sound: "assets/audios/writing/a.mp3",
     type: WritingType.character,
   ),
   WritingItem(
     character: "at",
-    sound: "assets/audio/writing/at.mp3",
+    sound: "assets/audios/writing/at.mp3",
     type: WritingType.word,
   ),
   WritingItem(
     character: "B",
-    sound: "assets/audio/writing/b.mp3",
+    sound: "assets/audios/writing/b.mp3",
     type: WritingType.character,
   ),
   WritingItem(
     character: "be",
-    sound: "assets/audio/writing/be.mp3",
+    sound: "assets/audios/writing/be.mp3",
     type: WritingType.word,
   ),
   WritingItem(
     character: "C",
-    sound: "assets/audio/writing/c.mp3",
+    sound: "assets/audios/writing/c.mp3",
     type: WritingType.character,
   ),
   WritingItem(
     character: "N",
-    sound: "assets/audio/writing/n.mp3",
+    sound: "assets/audios/writing/n.mp3",
     type: WritingType.character,
   ),
   WritingItem(
     character: "net",
-    sound: "assets/audio/writing/net.mp3",
+    sound: "assets/audios/writing/net.mp3",
     type: WritingType.word,
   ),
   WritingItem(
     character: "R",
-    sound: "assets/audio/writing/r.mp3",
+    sound: "assets/audios/writing/r.mp3",
     type: WritingType.character,
   ),
   WritingItem(
     character: "rat",
-    sound: "assets/audio/writing/rat.mp3",
+    sound: "assets/audios/writing/rat.mp3",
     type: WritingType.word,
   ),
   WritingItem(
     character: "M",
-    sound: "assets/audio/writing/m.mp3",
+    sound: "assets/audios/writing/m.mp3",
     type: WritingType.character,
   ),
   WritingItem(
     character: "mat",
-    sound: "assets/audio/writing/mat.mp3",
+    sound: "assets/audios/writing/mat.mp3",
     type: WritingType.word,
   ),
   WritingItem(
     character: "D",
-    sound: "assets/audio/writing/d.mp3",
+    sound: "assets/audios/writing/d.mp3",
     type: WritingType.character,
   ),
   WritingItem(
     character: "dad",
-    sound: "assets/audio/writing/dad.mp3",
+    sound: "assets/audios/writing/dad.mp3",
     type: WritingType.word,
   ),
 ];
@@ -143,7 +143,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 2,
     listOfWriting: [_dummyWritingItems[0], _dummyWritingItems[1]],
     songText: "S, S, Snake!",
-    songAudio: "assets/audio/s_song.mp3",
+    songAudio: "assets/audios/snake_in_grass.mp3",
   ),
   PhonicsCharacter(
     character: "a",
@@ -158,7 +158,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[0], _dummyWritingItems[1]],
     songText: "A, A, Apple!",
-    songAudio: "assets/audio/a_song.mp3",
+    songAudio: "assets/audios/a_song.mp3",
   ),
   PhonicsCharacter(
     character: "t",
@@ -173,7 +173,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[2], _dummyWritingItems[3]],
     songText: "Tap, Tap, Tap!",
-    songAudio: "assets/audio/t_song.mp3",
+    songAudio: "assets/audios/t_song.mp3",
   ),
   PhonicsCharacter(
     character: "i",
@@ -188,7 +188,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[0], _dummyWritingItems[1]],
     songText: "Inky the mouse ran up the clock, i-i-i...",
-    songAudio: "assets/audio/i_song.mp3",
+    songAudio: "assets/audios/i_song.mp3",
   ),
   PhonicsCharacter(
     character: "p",
@@ -203,7 +203,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[2], _dummyWritingItems[3]],
     songText: "Pop! Pop! Pop!",
-    songAudio: "assets/audio/p_song.mp3",
+    songAudio: "assets/audios/p_song.mp3",
   ),
   PhonicsCharacter(
     character: "n",
@@ -218,7 +218,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[5], _dummyWritingItems[6]],
     songText: "N, N, Nose!",
-    songAudio: "assets/audio/n_song.mp3",
+    songAudio: "assets/audios/n_song.mp3",
   ),
   // Additional characters for other groups
   PhonicsCharacter(
@@ -234,7 +234,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[4]],
     songText: "C-K, click click!",
-    songAudio: "assets/audio/ck_song.mp3",
+    songAudio: "assets/audios/ck_song.mp3",
   ),
   PhonicsCharacter(
     character: "e",
@@ -249,7 +249,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[0], _dummyWritingItems[1]],
     songText: "E, E, Egg!",
-    songAudio: "assets/audio/e_song.mp3",
+    songAudio: "assets/audios/e_song.mp3",
   ),
   PhonicsCharacter(
     character: "h",
@@ -264,7 +264,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[2]],
     songText: "H, H, Hippo!",
-    songAudio: "assets/audio/h_song.mp3",
+    songAudio: "assets/audios/h_song.mp3",
   ),
   PhonicsCharacter(
     character: "r",
@@ -279,7 +279,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[7], _dummyWritingItems[8]],
     songText: "R, R, Rabbit!",
-    songAudio: "assets/audio/r_song.mp3",
+    songAudio: "assets/audios/r_song.mp3",
   ),
   PhonicsCharacter(
     character: "m",
@@ -294,7 +294,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[9], _dummyWritingItems[10]],
     songText: "M, M, Monkey!",
-    songAudio: "assets/audio/m_song.mp3",
+    songAudio: "assets/audios/m_song.mp3",
   ),
   PhonicsCharacter(
     character: "d",
@@ -309,7 +309,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[11], _dummyWritingItems[12]],
     songText: "D, D, Duck!",
-    songAudio: "assets/audio/d_song.mp3",
+    songAudio: "assets/audios/d_song.mp3",
   ),
   // Digraphs and additional sounds
   PhonicsCharacter(
@@ -325,7 +325,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[0]],
     songText: "Sh, Sh, Shell!",
-    songAudio: "assets/audio/sh_song.mp3",
+    songAudio: "assets/audios/sh_song.mp3",
   ),
   PhonicsCharacter(
     character: "ch",
@@ -340,7 +340,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[1]],
     songText: "Ch, Ch, Choo Choo!",
-    songAudio: "assets/audio/ch_song.mp3",
+    songAudio: "assets/audios/ch_song.mp3",
   ),
   PhonicsCharacter(
     character: "th",
@@ -355,7 +355,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[2]],
     songText: "Th, Th, Thumb!",
-    songAudio: "assets/audio/th_song.mp3",
+    songAudio: "assets/audios/th_song.mp3",
   ),
   PhonicsCharacter(
     character: "ng",
@@ -370,7 +370,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[3]],
     songText: "Ng, Ng, Ring!",
-    songAudio: "assets/audio/ng_song.mp3",
+    songAudio: "assets/audios/ng_song.mp3",
   ),
   PhonicsCharacter(
     character: "wh",
@@ -385,7 +385,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[4]],
     songText: "Wh, Wh, Whale!",
-    songAudio: "assets/audio/wh_song.mp3",
+    songAudio: "assets/audios/wh_song.mp3",
   ),
   PhonicsCharacter(
     character: "ph",
@@ -400,7 +400,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[5]],
     songText: "Ph, Ph, Phone!",
-    songAudio: "assets/audio/ph_song.mp3",
+    songAudio: "assets/audios/ph_song.mp3",
   ),
   PhonicsCharacter(
     character: "ai",
@@ -415,7 +415,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[6]],
     songText: "Ai, Ai, Rain!",
-    songAudio: "assets/audio/ai_song.mp3",
+    songAudio: "assets/audios/ai_song.mp3",
   ),
   PhonicsCharacter(
     character: "ee",
@@ -430,7 +430,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[7]],
     songText: "Ee, Ee, Bee!",
-    songAudio: "assets/audio/ee_song.mp3",
+    songAudio: "assets/audios/ee_song.mp3",
   ),
   PhonicsCharacter(
     character: "oa",
@@ -445,7 +445,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[8]],
     songText: "Oa, Oa, Boat!",
-    songAudio: "assets/audio/oa_song.mp3",
+    songAudio: "assets/audios/oa_song.mp3",
   ),
   PhonicsCharacter(
     character: "oo",
@@ -460,7 +460,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[9]],
     songText: "Oo, Oo, Moon!",
-    songAudio: "assets/audio/oo_song.mp3",
+    songAudio: "assets/audios/oo_song.mp3",
   ),
   PhonicsCharacter(
     character: "ou",
@@ -475,7 +475,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[10]],
     songText: "Ou, Ou, Cloud!",
-    songAudio: "assets/audio/ou_song.mp3",
+    songAudio: "assets/audios/ou_song.mp3",
   ),
   PhonicsCharacter(
     character: "oi",
@@ -490,7 +490,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[11]],
     songText: "Oi, Oi, Coin!",
-    songAudio: "assets/audio/oi_song.mp3",
+    songAudio: "assets/audios/oi_song.mp3",
   ),
   PhonicsCharacter(
     character: "ar",
@@ -505,7 +505,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[12]],
     songText: "Ar, Ar, Star!",
-    songAudio: "assets/audio/ar_song.mp3",
+    songAudio: "assets/audios/ar_song.mp3",
   ),
   PhonicsCharacter(
     character: "or",
@@ -520,7 +520,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[0]],
     songText: "Or, Or, Door!",
-    songAudio: "assets/audio/or_song.mp3",
+    songAudio: "assets/audios/or_song.mp3",
   ),
   PhonicsCharacter(
     character: "er",
@@ -535,7 +535,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[1]],
     songText: "Er, Er, Bird!",
-    songAudio: "assets/audio/er_song.mp3",
+    songAudio: "assets/audios/er_song.mp3",
   ),
   PhonicsCharacter(
     character: "ir",
@@ -550,7 +550,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[2]],
     songText: "Ir, Ir, Girl!",
-    songAudio: "assets/audio/ir_song.mp3",
+    songAudio: "assets/audios/ir_song.mp3",
   ),
   PhonicsCharacter(
     character: "ur",
@@ -565,7 +565,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[3]],
     songText: "Ur, Ur, Nurse!",
-    songAudio: "assets/audio/ur_song.mp3",
+    songAudio: "assets/audios/ur_song.mp3",
   ),
   PhonicsCharacter(
     character: "bl",
@@ -580,7 +580,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[4]],
     songText: "Bl, Bl, Block!",
-    songAudio: "assets/audio/bl_song.mp3",
+    songAudio: "assets/audios/bl_song.mp3",
   ),
   PhonicsCharacter(
     character: "cl",
@@ -595,7 +595,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[5]],
     songText: "Cl, Cl, Clown!",
-    songAudio: "assets/audio/cl_song.mp3",
+    songAudio: "assets/audios/cl_song.mp3",
   ),
   PhonicsCharacter(
     character: "fl",
@@ -610,7 +610,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[6]],
     songText: "Fl, Fl, Flag!",
-    songAudio: "assets/audio/fl_song.mp3",
+    songAudio: "assets/audios/fl_song.mp3",
   ),
   PhonicsCharacter(
     character: "gl",
@@ -625,7 +625,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[7]],
     songText: "Gl, Gl, Glass!",
-    songAudio: "assets/audio/gl_song.mp3",
+    songAudio: "assets/audios/gl_song.mp3",
   ),
   PhonicsCharacter(
     character: "pl",
@@ -640,7 +640,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[8]],
     songText: "Pl, Pl, Plant!",
-    songAudio: "assets/audio/pl_song.mp3",
+    songAudio: "assets/audios/pl_song.mp3",
   ),
   PhonicsCharacter(
     character: "sl",
@@ -655,7 +655,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[9]],
     songText: "Sl, Sl, Slide!",
-    songAudio: "assets/audio/sl_song.mp3",
+    songAudio: "assets/audios/sl_song.mp3",
   ),
   PhonicsCharacter(
     character: "br",
@@ -670,7 +670,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[10]],
     songText: "Br, Br, Bridge!",
-    songAudio: "assets/audio/br_song.mp3",
+    songAudio: "assets/audios/br_song.mp3",
   ),
   PhonicsCharacter(
     character: "cr",
@@ -685,7 +685,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[11]],
     songText: "Cr, Cr, Crab!",
-    songAudio: "assets/audio/cr_song.mp3",
+    songAudio: "assets/audios/cr_song.mp3",
   ),
   PhonicsCharacter(
     character: "dr",
@@ -700,7 +700,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[12]],
     songText: "Dr, Dr, Drum!",
-    songAudio: "assets/audio/dr_song.mp3",
+    songAudio: "assets/audios/dr_song.mp3",
   ),
   PhonicsCharacter(
     character: "fr",
@@ -715,7 +715,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[0]],
     songText: "Fr, Fr, Frog!",
-    songAudio: "assets/audio/fr_song.mp3",
+    songAudio: "assets/audios/fr_song.mp3",
   ),
   PhonicsCharacter(
     character: "gr",
@@ -730,7 +730,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[1]],
     songText: "Gr, Gr, Grapes!",
-    songAudio: "assets/audio/gr_song.mp3",
+    songAudio: "assets/audios/gr_song.mp3",
   ),
   PhonicsCharacter(
     character: "pr",
@@ -745,7 +745,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[2]],
     songText: "Pr, Pr, Present!",
-    songAudio: "assets/audio/pr_song.mp3",
+    songAudio: "assets/audios/pr_song.mp3",
   ),
   PhonicsCharacter(
     character: "tr",
@@ -760,7 +760,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[3]],
     songText: "Tr, Tr, Tree!",
-    songAudio: "assets/audio/tr_song.mp3",
+    songAudio: "assets/audios/tr_song.mp3",
   ),
   PhonicsCharacter(
     character: "sk",
@@ -775,7 +775,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[4]],
     songText: "Sk, Sk, Skate!",
-    songAudio: "assets/audio/sk_song.mp3",
+    songAudio: "assets/audios/sk_song.mp3",
   ),
   PhonicsCharacter(
     character: "sm",
@@ -790,7 +790,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[5]],
     songText: "Sm, Sm, Smile!",
-    songAudio: "assets/audio/sm_song.mp3",
+    songAudio: "assets/audios/sm_song.mp3",
   ),
   PhonicsCharacter(
     character: "sn",
@@ -805,7 +805,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[6]],
     songText: "Sn, Sn, Snake!",
-    songAudio: "assets/audio/sn_song.mp3",
+    songAudio: "assets/audios/sn_song.mp3",
   ),
   PhonicsCharacter(
     character: "sp",
@@ -820,7 +820,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[7]],
     songText: "Sp, Sp, Spider!",
-    songAudio: "assets/audio/sp_song.mp3",
+    songAudio: "assets/audios/sp_song.mp3",
   ),
   PhonicsCharacter(
     character: "st",
@@ -835,7 +835,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[8]],
     songText: "St, St, Star!",
-    songAudio: "assets/audio/st_song.mp3",
+    songAudio: "assets/audios/st_song.mp3",
   ),
   PhonicsCharacter(
     character: "o",
@@ -850,7 +850,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[9]],
     songText: "O, O, Orange!",
-    songAudio: "assets/audio/o_song.mp3",
+    songAudio: "assets/audios/o_song.mp3",
   ),
   PhonicsCharacter(
     character: "u",
@@ -865,7 +865,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[10]],
     songText: "U, U, Umbrella!",
-    songAudio: "assets/audio/u_song.mp3",
+    songAudio: "assets/audios/u_song.mp3",
   ),
   PhonicsCharacter(
     character: "b",
@@ -880,7 +880,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[11]],
     songText: "B, B, Bat!",
-    songAudio: "assets/audio/b_song.mp3",
+    songAudio: "assets/audios/b_song.mp3",
   ),
   PhonicsCharacter(
     character: "c",
@@ -895,7 +895,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[12]],
     songText: "C, C, Cat!",
-    songAudio: "assets/audio/c_song.mp3",
+    songAudio: "assets/audios/c_song.mp3",
   ),
   PhonicsCharacter(
     character: "f",
@@ -910,7 +910,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[0]],
     songText: "F, F, Fish!",
-    songAudio: "assets/audio/f_song.mp3",
+    songAudio: "assets/audios/f_song.mp3",
   ),
   PhonicsCharacter(
     character: "g",
@@ -925,7 +925,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[1]],
     songText: "G, G, Goat!",
-    songAudio: "assets/audio/g_song.mp3",
+    songAudio: "assets/audios/g_song.mp3",
   ),
   PhonicsCharacter(
     character: "j",
@@ -940,7 +940,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[2]],
     songText: "J, J, Jeep!",
-    songAudio: "assets/audio/j_song.mp3",
+    songAudio: "assets/audios/j_song.mp3",
   ),
   PhonicsCharacter(
     character: "k",
@@ -955,7 +955,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[3]],
     songText: "K, K, Kite!",
-    songAudio: "assets/audio/k_song.mp3",
+    songAudio: "assets/audios/k_song.mp3",
   ),
   PhonicsCharacter(
     character: "l",
@@ -970,7 +970,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[4]],
     songText: "L, L, Lion!",
-    songAudio: "assets/audio/l_song.mp3",
+    songAudio: "assets/audios/l_song.mp3",
   ),
   PhonicsCharacter(
     character: "v",
@@ -985,7 +985,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[5]],
     songText: "V, V, Van!",
-    songAudio: "assets/audio/v_song.mp3",
+    songAudio: "assets/audios/v_song.mp3",
   ),
   PhonicsCharacter(
     character: "w",
@@ -1000,7 +1000,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[6]],
     songText: "W, W, Wolf!",
-    songAudio: "assets/audio/w_song.mp3",
+    songAudio: "assets/audios/w_song.mp3",
   ),
   PhonicsCharacter(
     character: "x",
@@ -1015,7 +1015,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[7]],
     songText: "X, X, Xylophone!",
-    songAudio: "assets/audio/x_song.mp3",
+    songAudio: "assets/audios/x_song.mp3",
   ),
   PhonicsCharacter(
     character: "y",
@@ -1030,7 +1030,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[8]],
     songText: "Y, Y, Yo-yo!",
-    songAudio: "assets/audio/y_song.mp3",
+    songAudio: "assets/audios/y_song.mp3",
   ),
   PhonicsCharacter(
     character: "z",
@@ -1045,7 +1045,7 @@ final List<PhonicsCharacter> _phonicsCharacters = [
     correctSoundingItemIndex: 1,
     listOfWriting: [_dummyWritingItems[9]],
     songText: "Z, Z, Zebra!",
-    songAudio: "assets/audio/z_song.mp3",
+    songAudio: "assets/audios/z_song.mp3",
   ),
 ];
 
