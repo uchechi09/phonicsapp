@@ -1,7 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:phonicsapp/pages/onboarding_page.dart';
 
-void main() {
+import 'package:flutter/material.dart';
+import 'package:phonicsapp/env/env.dart';
+import 'package:phonicsapp/pages/onboarding_page.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+void main() async {
+   await Supabase.initialize(
+    url: Env.supabaseUrl,
+    anonKey:  Env.supabasePubKey,
+  );
   runApp(const MyApp());
 }
 

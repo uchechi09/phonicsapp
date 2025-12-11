@@ -7,7 +7,7 @@ import 'package:phonicsapp/models/writing_item.dart';
 
 final _dummySoundingItems = [
   SoundingItem(image: "assets/images/sun.jpg", audio: "assets/audios/sun.mp3", name: "sun"),
-  SoundingItem(image: "assets/images/spider.jpg", audio: "assets/audios/spider.mp3", name: "spider"),
+  SoundingItem(image: "assets/images/spider.jpg", audio: "assets/audios/drum.mp3", name: "spider"),
   SoundingItem(image: "assets/images/drum.png", audio: "assets/audios/drum.mp3", name: "drum"),
   SoundingItem(image: "assets/images/snail.png", audio: "assets/audios/snail.mp3", name: "snail"),
   SoundingItem(
@@ -154,11 +154,13 @@ final List<PhonicsCharacter> _phonicsCharacters = [
       _dummySoundingItems[0],
       _dummySoundingItems[4],
       _dummySoundingItems[2],
+      
     ],
     correctSoundingItemIndex: 0,
     listOfWriting: [_dummyWritingItems[0], _dummyWritingItems[1]],
     songText: "A, A, Apple!",
     songAudio: "assets/audios/a_song.mp3",
+    revision: ['s'],
   ),
   PhonicsCharacter(
     character: "t",

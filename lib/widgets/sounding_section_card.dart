@@ -64,6 +64,7 @@ class _SoundingItemWidgetState extends State<SoundingItemWidget> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.soundingItem.audio);
     return InkWell(
       onTap: () {
         justAudio.setAsset(widget.soundingItem.audio);

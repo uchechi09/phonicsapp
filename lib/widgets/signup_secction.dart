@@ -3,7 +3,13 @@ import 'package:phonicsapp/widgets/custom_textfield.dart';
 import 'package:phonicsapp/widgets/password_textfield.dart';
 
 class SignUpSection extends StatelessWidget {
-  const SignUpSection({super.key});
+  const SignUpSection({
+    super.key,
+    required this.emailController,
+    required this.passwordController,
+  });
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +28,8 @@ class SignUpSection extends StatelessWidget {
           child: Column(
             spacing: 16,
             children: [
-              CustomTextField(label: "Email"),
-              PasswordTextField(),
+              CustomTextField(label: "Email",controller: emailController,),
+              PasswordTextField(controller: passwordController,),
             ],
           ),
         ),
