@@ -9,7 +9,7 @@ class CustomTextField extends StatelessWidget {
     this.textInputType = TextInputType.text,
     this.suffixIcon,
   });
-  final String label;
+  final String label; 
   final TextEditingController? controller;
   final bool obscureText;
   final TextInputType textInputType;
@@ -20,7 +20,7 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscureText,
-      keyboardType: textInputType,
+      keyboardType: textInputType,style: TextStyle(color: Colors.white), 
 
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
@@ -36,10 +36,8 @@ class CustomTextField extends StatelessWidget {
         labelText: label,
         labelStyle: TextStyle(color: Colors.white),
         focusColor: Colors.white,
-        
       ),
       cursorColor: Colors.white,
-      
     );
   }
 }
