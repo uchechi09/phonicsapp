@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phonicsapp/models/app_user.dart';
 import 'package:phonicsapp/pages/home_page.dart';
 import 'package:phonicsapp/repository/auth_repository.dart';
 import 'package:phonicsapp/widgets/signup_secction.dart';
@@ -16,6 +17,10 @@ class _SignupPageState extends State<SignupPage> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  AppUser? newUser;
+  AuthRepository authRepository = AuthRepository();
+  List<String> selectedUserTypes = [];
+  List<String> selectedAges = [];
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +48,7 @@ class _SignupPageState extends State<SignupPage> {
                   key: const Key("grid1"),
                   options: ["Teacher", "Guardian", "Tutor", "Others"],
                   onSelect: (selectedItems) {
-                    print(selectedItems);
+                    selectedUserTypes = selectedItems;
                   },
                 ),
 
@@ -53,8 +58,8 @@ class _SignupPageState extends State<SignupPage> {
                   heading: "Select your age",
                   key: const Key("grid2"),
                   options: ["0-3", "4-6", "7-8", "8+"],
-                  onSelect: (selectedItems) {
-                    print(selectedItems);
+                  onSelect: (listOfSelection) {
+                    selectedAges = listOfSelection;
                   },
                 ),
 
@@ -90,6 +95,12 @@ class _SignupPageState extends State<SignupPage> {
                     setState(() {
                       currentpageIndex++;
                     });
+                    authRepository.updateUserProfile(
+                      user: newUser!.copyWith(
+                        userType: selectedUserTypes,
+                        ageOfLearners: selectedAges,
+                      ),
+                    );
                   },
                 ),
               ),
@@ -102,19 +113,19 @@ class _SignupPageState extends State<SignupPage> {
 
   Future<void> _createUserAccount() async {
     try {
-      await AuthRepository().signUp(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
+      newUser = await AuthRepository().signUp(
+        email: emailController.text,
+        password: passwordController.text,
       );
 
       // Move to next screen ONLY after successful signup
       setState(() {
         currentpageIndex++;
       });
-
     } catch (e) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(e.toString())));
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.toString())));
     }
   }
 }
