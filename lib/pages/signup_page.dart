@@ -20,7 +20,7 @@ class _SignupPageState extends State<SignupPage> {
   AppUser? newUser;
   AuthRepository authRepository = AuthRepository();
   List<String> selectedUserTypes = [];
-  List<String> selectedAges = [];
+  List<String> selectedAge = [];
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _SignupPageState extends State<SignupPage> {
                   key: const Key("grid2"),
                   options: ["0-3", "4-6", "7-8", "8+"],
                   onSelect: (listOfSelection) {
-                    selectedAges = listOfSelection;
+                    selectedAge = listOfSelection;
                   },
                 ),
 
@@ -72,36 +72,30 @@ class _SignupPageState extends State<SignupPage> {
                       MediaQuery.sizeOf(context).width * 0.12,
                     ),
                   ),
-                  child: const Text("Next"),
-                  onPressed: () async {
-                    // FINAL PAGE → GO TO HOME
+                  onPressed: () {
                     if (currentpageIndex == 2) {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const HomePage(),
+                          builder: (context) {
+                            return HomePage();
+                          },
                         ),
                       );
-                      return;
+                       authRepository.updateUserProfile(
+                        user: newUser!.copyWith(ageOfLearners: selectedAge, userType: selectedUserTypes),
+                      );
+                    } else if (currentpageIndex == 0) {
+                      _createUserAccount();
+                    } else {
+                      //increment current page index
+                      setState(() {
+                        currentpageIndex++;
+                      });
+                     
                     }
-
-                    // PAGE 0 → SIGN UP FIRST
-                    if (currentpageIndex == 0) {
-                      await _createUserAccount();
-                      return;
-                    }
-
-                    // PAGE 1 → just move to page 2
-                    setState(() {
-                      currentpageIndex++;
-                    });
-                    authRepository.updateUserProfile(
-                      user: newUser!.copyWith(
-                        userType: selectedUserTypes,
-                        ageOfLearners: selectedAges,
-                      ),
-                    );
                   },
+                  child: Text("Next"),
                 ),
               ),
             ],
